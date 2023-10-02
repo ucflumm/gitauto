@@ -21,4 +21,5 @@ will check if exists and will error exit on failed file creation.
 
 ## install_util.sh - installer
 interactve installer, must be run with sudo otherwise will exit 1
+
 it prompts you to copy either/both gitauto and cpyfile into you ``/usr/bin`` directory
