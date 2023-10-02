@@ -4,7 +4,7 @@
 * clone repo ``git clone https://github.com/ucflumm/gitauto.git``
 * cd into directory ``cd gitauto``
 * make/check executable installer script ``sudo chmod u+x install_util.sh``
-* run interactive install script ``./install_util.sh``
+* run interactive install script with ***sudo permissions*** ``./install_util.sh``
 
 ## gitauto
 Short shell script to speed up small commits.
