@@ -1,0 +1,39 @@
+#!/bin/bash
+
+while true; do
+    # Prompt the user for a file name
+    read -p "Enter a name for the Python file (without the .py extension), or enter 'exit' to quit: " filename
+
+    # Check if the user wants to exit
+    if [ "$filename" == "exit" ] || [ "$filename" == "quit" ] || [ "$filename" == "q" ]; then
+        echo "Exiting the script."
+		ls -l
+        exit 0
+    fi
+
+    # Check if the filename is empty
+    if [ -z "$filename" ]; then
+        echo "Please enter a valid filename."
+        continue
+    fi
+
+    # Add the .py extension to the filename
+    filename="${filename}.py"
+
+    # Check if the file already exists
+    if [ -e "$filename" ]; then
+        echo "File '$filename' already exists. Please choose a different name."
+    else
+        # Create the Python file with the shebang line
+        echo "#!/usr/bin/python3" > "$filename"
+		
+		if [ -e "$filename" ]; then
+		# Make the file executable (optional)
+        	chmod u+x "$filename"
+			echo "Python file '$filename' created with u+x permissions & first line #!/usr/bin/python3"
+		else
+			echo "Failure file not created exiting script"
+			exit 1
+		fi
+	fi
+done

@@ -1,4 +1,6 @@
-# gitauto
+# gitauto and utils
+
+## gitauto
 Short shell script to speed up small commits.
 It takes a filename as argument and prompts for the commit message.
 Aborts if empty commit message and/or non-existent file
@@ -7,3 +9,12 @@ Aborts if empty commit message and/or non-existent file
 ./gitauto [FILE] 
 ```
 where ***[FILE]*** is the file you want to commit and push.
+
+## cpyfile - create py file
+interactive pyfile generator. the files generated will include ``#!/usr/bin/python3`` at the top
+it will also make the permissions of the created file to u+x
+will check if exists and will error exit on failed file creation.
+#### USAGE
+```
+./cpyfile
+```
